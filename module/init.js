@@ -1,4 +1,3 @@
-import { SimpleActor } from "./actor.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
 
 /* -------------------------------------------- */
@@ -20,9 +19,6 @@ Hooks.once("init", async function() {
     formula: "1d20",
     decimals: 2
   };
-
-  // Define custom Entity classes
-  CONFIG.Actor.entityClass = SimpleActor;
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
