@@ -1,14 +1,6 @@
-/**
- * A simple and flexible system for world-building using an arbitrary collection of character and item attributes
- * Author: Atropos
- * Software License: GNU GPLv3
- */
-
 // Import Modules
 import { SimpleActor } from "./actor.js";
-import { SimpleItemSheet } from "./item-sheet.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
-import { preloadHandlebarsTemplates } from "./templates.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -16,7 +8,6 @@ import { preloadHandlebarsTemplates } from "./templates.js";
 
 Hooks.once("init", async function() {
  
-  console.log("Localization...");
   game.settings.register("laf", "Name", {
     name: "SIMPLE.Name",
     hint: "SIMPLE.Name",
@@ -113,11 +104,11 @@ Hooks.on("getActorDirectoryEntryContext", (html, options) => {
     name: game.i18n.localize("SIMPLE.DefineTemplate"),
     icon: '<i class="fas fa-stamp"></i>',
     condition: li => {
-      const actor = game.actors.get(li.data("entityId"));
+      const actor = game.actors.get(li[0].dataset.entryId);
       return !actor.getFlag("laf", "isTemplate");
     },
     callback: li => {
-      const actor = game.actors.get(li.data("entityId"));
+      const actor = game.actors.get(li[0].dataset.entryId);
       actor.setFlag("laf", "isTemplate", true);
     }
   });
@@ -127,11 +118,11 @@ Hooks.on("getActorDirectoryEntryContext", (html, options) => {
     name: game.i18n.localize("SIMPLE.UnsetTemplate"),
     icon: '<i class="fas fa-times"></i>',
     condition: li => {
-      const actor = game.actors.get(li.data("entityId"));
+      const actor = game.actors.get(li[0].dataset.entryId);
       return actor.getFlag("laf", "isTemplate");
     },
     callback: li => {
-      const actor = game.actors.get(li.data("entityId"));
+      const actor = game.actors.get(li[0].dataset.entryId);
       actor.setFlag("laf", "isTemplate", false);
     }
   });
@@ -146,11 +137,11 @@ Hooks.on("getItemDirectoryEntryContext", (html, options) => {
     name: game.i18n.localize("SIMPLE.DefineTemplate"),
     icon: '<i class="fas fa-stamp"></i>',
     condition: li => {
-      const item = game.items.get(li.data("entityId"));
+      const item = game.items.get(li[0].dataset.entryId);
       return !item.getFlag("laf", "isTemplate");
     },
     callback: li => {
-      const item = game.items.get(li.data("entityId"));
+      const item = game.items.get(li[0].dataset.entryId);
       item.setFlag("laf", "isTemplate", true);
     }
   });
@@ -160,11 +151,11 @@ Hooks.on("getItemDirectoryEntryContext", (html, options) => {
     name: game.i18n.localize("SIMPLE.UnsetTemplate"),
     icon: '<i class="fas fa-times"></i>',
     condition: li => {
-      const item = game.items.get(li.data("entityId"));
+      const item = game.items.get(li[0].dataset.entryId);
       return item.getFlag("laf", "isTemplate");
     },
     callback: li => {
-      const item = game.items.get(li.data("entityId"));
+      const item = game.items.get(li[0].dataset.entryId);
       item.setFlag("laf", "isTemplate", false);
     }
   });

@@ -1,11 +1,9 @@
 <form class="{{cssClass}}" autocomplete="off">
-
   {{!-- Sheet Header --}}
   <header class="sheet-header">
       <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
       <div class="header-fields">
           <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize SIMPLE.Name}}" /></h1>
-
           <div class="subfields">
             
             <div class="subfieldsBlock">
@@ -14,16 +12,13 @@
 
             <div class="subfieldsBlock">
               <span class="numbersLabel">{{localize SIMPLE.Number}}</span>
-              <input class="numberinput" name="data.theOnlyStat" value="{{data.theOnlyStat}}" data-dtype="Number" placeholder="{{localize SIMPLE.Number}}"></select>
+              <input class="numberinput" name="system.theOnlyStat" value="{{system.theOnlyStat}}" data-dtype="Number" placeholder="{{localize SIMPLE.Number}}"></select>
             </div>
 
             <div class="subfieldsBlock">
               <a class="feelings">Feelings</a>
             </div>
-
           </div>
-
-
       </div>
   </header>
 
@@ -31,7 +26,6 @@
   <section class="sheet-body">
     <div class="body-container">
       <div class="row">
-<!-- Columns begin here -->
           <div class="column">
               <div class="bodyfieldsLabel">
                   <span id="styleLabel">{{localize SIMPLE.Style}}: </span>
@@ -45,28 +39,23 @@
                   <span id="goalLabel">{{localize SIMPLE.Goal}}: </span>
               </div>
           </div>
-
           <div class="column">
               <div class="bodyfields">
-                  <input class="styleinput" name="data.style" type="text" value="{{data.style}}" placeholder="{{localize SIMPLE.Style}}" />
+                  <input class="styleinput" name="system.style" type="text" value="{{system.style}}" placeholder="{{localize SIMPLE.Style}}" />
               </div>
 
               <div class="bodyfields">
-                  <input class="roleinput" name="data.role" type="text" value="{{data.role}}" placeholder="{{localize SIMPLE.Role}}" />
+                  <input class="roleinput" name="system.role" type="text" value="{{system.role}}" placeholder="{{localize SIMPLE.Role}}" />
               </div>
 
               <div class="bodyfields">
-                  <input class="goalinput" name="data.goal" type="text" value="{{data.goal}}" placeholder="{{localize SIMPLE.Goal}}" />
+                  <input class="goalinput" name="system.goal" type="text" value="{{system.goal}}" placeholder="{{localize SIMPLE.Goal}}" />
               </div>
           </div>
-          <!-- Columns ends here -->
       </div>
-      <!-- flex row ends here -->
       <div class="notepad" data-group="primary" data-tab="notepad" placeholder="Notes"></div> 
-      {{editor content=data.notepad target="data.notepad" button=true owner=owner editable=editable}}
+        {{editor content=system.notepad target="system.notepad" button=true owner=owner editable=editable}}
       </div>
     </div>
-<!-- body-container ends here -->
-
   </section>
 </form>

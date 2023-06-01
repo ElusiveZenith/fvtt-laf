@@ -61,7 +61,7 @@ export class SimpleActor extends Actor {
   _applyItems(data, shorthand) {
     // Map all items data using their slugified names
     data.items = this.data.items.reduce((obj, i) => {
-      let key = i.name.slugify({strict: true});
+      let key = i.name;
       let itemData = duplicate(i.data);
       const itemAttributes = [];
 
