@@ -32,8 +32,8 @@
     }
   ],
   "esmodules": [
-    "module/simple.js",
-    "module/lasersandfeelings.js"
+    "module/init.js",
+    "module/lasers-and-feelings.js"
   ],
   "styles": [
     "styles/simple.css"
@@ -48,6 +48,11 @@
       "lang": "es",
       "name": "Spanish",
       "path": "lang/es.json"
+    },
+    {
+      "lang": "pt-br",
+      "name": "Brazilian Portuguese",
+      "path": "lang/pt-br.json"
     }
   ],
   "gridDistance": 5,

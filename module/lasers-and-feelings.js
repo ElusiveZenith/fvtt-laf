@@ -1,8 +1,8 @@
-/*
-@param {integer} diceString - Number of rice to role
-@param {integer} num - An integer value found on the Lasers & Feelings character sheet in the number input
-@param {RollTypes} roleType - Lasers or Feelings roll
-@param {string} characterName - Name of the character rolling
+/**
+ * @param {integer} diceString - Number of rice to role
+ * @param {integer} num - An integer value found on the Lasers & Feelings character sheet in the number input
+ * @param {RollTypes} roleType - Lasers or Feelings roll
+ * @param {string} characterName - Name of the character rolling
 */
 async function makeRole(diceString, num, roleType, characterName) {
   let roll = await new Roll(diceString).roll();
@@ -17,11 +17,11 @@ async function makeRole(diceString, num, roleType, characterName) {
   });
 }
 
-/*
-@param {roll} r - A Roll object
-@param {integer} num - An integer value found on the Lasers & Feelings character sheet in the number input
-@param {RollTypes} roleType - an integer value of 1 or 0; 1 indicates a Lasers roll, 0 indicates a Feelings roll
-@returns {string} resultContent - the final string result of number of successes and any Laser-Feelings to be returned
+/**
+ * @param {roll} r - A Roll object
+ * @param {integer} num - An integer value found on the Lasers & Feelings character sheet in the number input
+ * @param {RollTypes} roleType - an integer value of 1 or 0; 1 indicates a Lasers roll, 0 indicates a Feelings roll
+ * @returns {string} resultContent - the final string result of number of successes and any Laser-Feelings to be returned
 */
 function evaluateRolls(r, num, roleType) {
   var array = r.terms[0].results;
@@ -59,9 +59,8 @@ function evaluateRolls(r, num, roleType) {
   return resultContent;
 }
 
-/*
-@param {String} characterName - The name of the character passed in as a string from actor-sheet.js
-@param {Integer} skNum - The skill number passed in from actor-sheet.js
+/**
+ * @param {String} characterName - The name of the character passed in as a string from actor-sheet.js
 */
 function lasersRoll(characterName) {
   let dialogTemplate = game.i18n.localize("SIMPLE.LasersRoll");
@@ -96,9 +95,8 @@ function lasersRoll(characterName) {
   }).render(true);
 }
 
-/*
-@param {String} characterName - The name of the character passed in as a string from actor-sheet.js
-@param {Integer} skNum - The skill number passed in from actor-sheet.js
+/**
+ * @param {String} characterName - The name of the character passed in as a string from actor-sheet.js
 */
 function feelingsRoll(characterName) {
   let dialogTemplate = game.i18n.localize("SIMPLE.FeelingsRoll");

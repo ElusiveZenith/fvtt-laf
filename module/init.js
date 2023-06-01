@@ -1,12 +1,11 @@
-// Import Modules
 import { SimpleActor } from "./actor.js";
 import { SimpleActorSheet } from "./actor-sheet.js";
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
 /* -------------------------------------------- */
-
 Hooks.once("init", async function() {
+  console.log(`Initializing Lasers & Feelings System`);
  
   game.settings.register("laf", "Name", {
     name: "SIMPLE.Name",
@@ -17,11 +16,6 @@ Hooks.once("init", async function() {
     config: true
   });
 
-  console.log(`Initializing Lasers & Feelings System`);
-  /**
-   * Set an initiative formula for the system. This will be updated later.
-   * @type {String}
-   */
   CONFIG.Combat.initiative = {
     formula: "1d20",
     decimals: 2

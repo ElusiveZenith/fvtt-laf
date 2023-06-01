@@ -1,4 +1,4 @@
-import { lasersRoll, feelingsRoll } from "./lasersandfeelings.js";
+import { lasersRoll, feelingsRoll } from "./lasers-and-feelings.js";
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
