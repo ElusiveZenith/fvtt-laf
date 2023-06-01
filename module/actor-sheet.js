@@ -47,10 +47,10 @@ export class SimpleActorSheet extends ActorSheet {
       .parents(".app")
       .find(".sheet-header h1.charname input")[0].value;
 
-    html.find("a.lasers").click(ev => {
+    html.find("a.lasers").click(() => {
       lasersRoll(characterName);
     });
-    html.find("a.feelings").click(ev => {
+    html.find("a.feelings").click(() => {
       feelingsRoll(characterName);
     });
   }
