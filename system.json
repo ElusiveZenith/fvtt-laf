@@ -2,9 +2,9 @@
   "name": "laf",
   "title": "Lasers & Feelings",
   "description": "An implementation of the adaptable one-page Lasers & Feelings system by John Harper.",
-  "version": "1.5",
-  "minimumCoreVersion": "0.8",
-  "compatibleCoreVersion": "9",
+  "version": "11.0.0",
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "11",
   "templateVersion": 2,
   "author": "Parker S.",
   "packs": [
@@ -12,22 +12,22 @@
       "name": "create-a-space-adventure",
       "label": "Create a Space Adventure",
       "system": "laf",
-      "path": "./packs/create-a-space-adventure.db",
-      "entity": "RollTable"
+      "type": "RollTable",
+      "path": "./packs/create-a-space-adventure"
     },
     {
       "name": "standard-space-adventure-generator",
       "label": "Standard Space Adventure Generator",
       "system": "laf",
-      "path": "./packs/standard-space-adventure-generator.db",
-      "entity": "Macro"
+      "type": "Macro",
+      "path": "./packs/standard-space-adventure-generator"
     },
     {
       "name": "lasers-and-feelings-rules",
       "label": "Lasers & Feelings PDF",
       "system": "laf",
-      "path": "./packs/lasers-and-feelings-rules.db",
-      "entity": "JournalEntry"
+      "type": "JournalEntry",
+      "path": "./packs/lasers-and-feelings-rules"
     }
   ],
   "esmodules": [
