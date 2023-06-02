@@ -26,9 +26,9 @@ jobs:
         with: 
           allowUpdates: true
           name: Release ${{ steps.get-version.outputs.version }}
-          draft: false
+          draft: true
           prerelease: false
           token: ${{secrets.GITHUB_TOKEN}}
           artifacts: './system.zip, ./system.json'
-          tag: ${{ steps.get-version.outputs.version }}
+          tag: v${{ steps.get-version.outputs.version }}
 
