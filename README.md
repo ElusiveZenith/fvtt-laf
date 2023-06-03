@@ -17,4 +17,5 @@ Manifest URL: https://github.com/ElusiveZenith/fvtt-laf/releases/latest/download
 
 # License
 John Harper's Lasers & Feelings is licensed under [CC BY-NCSA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/us/).
+
 Originally forked under MIT license [sparkcity/fvtt-laf](https://github.com/sparkcity/fvtt-laf)
