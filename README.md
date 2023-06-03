@@ -1,4 +1,4 @@
-[![Foundry](https://img.shields.io/badge/Foundry-11.299-brightgreen)](https://foundryvtt.com/)
+[![Foundry](https://img.shields.io/badge/Foundry-11.300-brightgreen)](https://foundryvtt.com/)
 ![GitHub All Releases](https://img.shields.io/github/downloads/ElusiveZenith/fvtt-laf/total)
 
 # Lasers & Feelings
