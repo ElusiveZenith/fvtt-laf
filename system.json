@@ -1,38 +1,39 @@
 {
-  "name": "laf",
+  "name": "lasers-and-feelings",
   "title": "Lasers & Feelings",
   "description": "An implementation of the adaptable one-page Lasers & Feelings system by John Harper.",
-  "version": "1.5",
-  "minimumCoreVersion": "0.8",
-  "compatibleCoreVersion": "9",
+  "version": "2.0.0",
+  "minimumCoreVersion": "11",
+  "compatibleCoreVersion": "11",
   "templateVersion": 2,
-  "author": "Parker S.",
+  "author": "ElusiveZenith",
+  "contributor": ["Parker S."],
   "packs": [
     {
       "name": "create-a-space-adventure",
       "label": "Create a Space Adventure",
-      "system": "laf",
-      "path": "./packs/create-a-space-adventure.db",
-      "entity": "RollTable"
+      "system": "lasers-and-feelings",
+      "type": "RollTable",
+      "path": "./packs/create-a-space-adventure"
     },
     {
       "name": "standard-space-adventure-generator",
       "label": "Standard Space Adventure Generator",
-      "system": "laf",
-      "path": "./packs/standard-space-adventure-generator.db",
-      "entity": "Macro"
+      "system": "lasers-and-feelings",
+      "type": "Macro",
+      "path": "./packs/standard-space-adventure-generator"
     },
     {
       "name": "lasers-and-feelings-rules",
       "label": "Lasers & Feelings PDF",
-      "system": "laf",
-      "path": "./packs/lasers-and-feelings-rules.db",
-      "entity": "JournalEntry"
+      "system": "lasers-and-feelings",
+      "type": "JournalEntry",
+      "path": "./packs/lasers-and-feelings-rules"
     }
   ],
   "esmodules": [
-    "module/simple.js",
-    "module/lasersandfeelings.js"
+    "module/init.js",
+    "module/lasers-and-feelings.js"
   ],
   "styles": [
     "styles/simple.css"
@@ -47,13 +48,18 @@
       "lang": "es",
       "name": "Spanish",
       "path": "lang/es.json"
+    },
+    {
+      "lang": "pt-br",
+      "name": "Brazilian Portuguese",
+      "path": "lang/pt-br.json"
     }
   ],
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "theOnlyStat",
-  "url": "https://github.com/sparkcity/fvtt-laf",
-  "manifest": "https://github.com/sparkcity/fvtt-laf/releases/latest/download/system.json",
-  "download": "https://github.com/sparkcity/fvtt-laf/releases/latest/download/system.zip",
+  "url": "https://github.com/ElusiveZenith/fvtt-laf",
+  "manifest": "https://github.com/ElusiveZenith/fvtt-laf/releases/latest/download/system.json",
+  "download": "https://github.com/ElusiveZenith/fvtt-laf/releases/latest/download/system.zip",
   "license": "LICENSE.txt"
 }
