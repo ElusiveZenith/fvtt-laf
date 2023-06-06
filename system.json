@@ -5,6 +5,9 @@
   "version": "2.0.0",
   "minimumCoreVersion": "11",
   "compatibleCoreVersion": "11",
+  "url": "https://github.com/ElusiveZenith/fvtt-laf",
+  "manifest": "https://raw.githubusercontent.com/ElusiveZenith/fvtt-laf/2.0.0/system.json",
+  "download": "https://github.com/ElusiveZenith/fvtt-laf/releases/download/2.0.0/system.zip",
   "templateVersion": 2,
   "author": "ElusiveZenith",
   "contributor": ["Parker S."],
@@ -58,8 +61,5 @@
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "theOnlyStat",
-  "url": "https://github.com/ElusiveZenith/fvtt-laf",
-  "manifest": "https://github.com/ElusiveZenith/fvtt-laf/releases/latest/download/system.json",
-  "download": "https://github.com/ElusiveZenith/fvtt-laf/releases/latest/download/system.zip",
   "license": "LICENSE.txt"
 }
