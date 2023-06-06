@@ -8,8 +8,8 @@ export class SimpleActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["lasers-and-feelings", "sheet", "actor"],
-      template: "systems/lasers-and-feelings/templates/actor-sheet.html",
+      classes: ["laf", "sheet", "actor"],
+      template: "systems/laf/templates/actor-sheet.html",
       width: 600,
       height: 600,
       tabs: [

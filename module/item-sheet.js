@@ -9,8 +9,8 @@ export class SimpleItemSheet extends ItemSheet {
   /** @override */
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
-			classes: ["lasers-and-feelings", "sheet", "item"],
-			template: "systems/lasers-and-feelings/templates/item-sheet.html",
+			classes: ["laf", "sheet", "item"],
+			template: "systems/laf/templates/item-sheet.html",
 			width: 520,
 			height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]

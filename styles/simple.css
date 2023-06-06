@@ -3,18 +3,18 @@
   src: url('../assets/fonts/aAtmospheric.ttf');
 }
 
-.lasers-and-feelings {
+.laf {
   /* Sheet Tabs */
   /* Items List */
   /* Attributes */
 }
-.lasers-and-feelings .window-content {
+.laf .window-content {
   background: url('../assets/greybg.jpg');
   height: 100%;
   padding: 5px;
   overflow-y: hidden;
 }
-.lasers-and-feelings .sheet-header {
+.laf .sheet-header {
   height: 115px;
   overflow: hidden;
   display: flex;
@@ -23,70 +23,70 @@
   justify-content: flex-start;
   margin-bottom: 10px;
 }
-.lasers-and-feelings .sheet-header .profile-img {
+.laf .sheet-header .profile-img {
   flex: 0 0 100px;
   height: 100px;
   margin-right: 10px;
 }
-.lasers-and-feelings .sheet-header .header-fields {
+.laf .sheet-header .header-fields {
   flex: 1;
   height: 100px;
 }
-.lasers-and-feelings .sheet-header h1.charname {
+.laf .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
   margin: 5px 0;
   border-bottom: 0;
 }
-.lasers-and-feelings .sheet-header h1.charname input {
+.laf .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-.lasers-and-feelings .sheet-header a.feelings{
+.laf .sheet-header a.feelings{
   font-family: Atmospheric;
   padding: 20px;
   color: #007dac;
 }
 
-.lasers-and-feelings .sheet-header a.lasers{
+.laf .sheet-header a.lasers{
   font-family: Atmospheric;
   padding: 20px;
   color: #00aeef;
 }
 
-.lasers-and-feelings .sheet-header .numbersLabel{
+.laf .sheet-header .numbersLabel{
   font-family: Atmospheric;
 }
 
-.lasers-and-feelings .sheet-header .subfields {
+.laf .sheet-header .subfields {
   display: flex;
   flex-direction: row;
 }
 
-.lasers-and-feelings .sheet-header .subfields .subfieldsBlock {
+.laf .sheet-header .subfields .subfieldsBlock {
   width: 100%;
   margin-top: 15px;
 }
 
-.lasers-and-feelings .sheet-header .subfields .subfieldsBlock select {
+.laf .sheet-header .subfields .subfieldsBlock select {
   width: 100px;
 }
 
-.lasers-and-feelings .sheet-body .column .bodyfields .styleinput {
+.laf .sheet-body .column .bodyfields .styleinput {
   width: 270px;
 }
 
-.lasers-and-feelings .sheet-body .column .bodyfields .roleinput {
+.laf .sheet-body .column .bodyfields .roleinput {
   width: 270px;
 }
 
-.lasers-and-feelings .sheet-body .column .bodyfields .goalinput {
+.laf .sheet-body .column .bodyfields .goalinput {
   width: 270px;
 }
 
-.lasers-and-feelings .sheet-header .subfields .subfieldsBlock .numberinput {
+.laf .sheet-header .subfields .subfieldsBlock .numberinput {
   width: 80px;
 }
 
@@ -94,13 +94,13 @@
   display: flex;
 }
 
-.lasers-and-feelings .sheet-header .lasersButton{
+.laf .sheet-header .lasersButton{
   font-family: Atmospheric;
   background: #007dac;
   border: 1px solid #00aeef;
 }
 
-.lasers-and-feelings .sheet-header .feelingsButton{
+.laf .sheet-header .feelingsButton{
   font-family: Atmospheric;
   background: #00aeef;
   border: 1px solid #007dac;
@@ -120,7 +120,7 @@
   flex-direction: column;
 }
 
-.lasers-and-feelings .sheet-body .bodyfields {
+.laf .sheet-body .bodyfields {
   padding-top: 20px;
   padding-left: 10px;
   background: #aad3e7;
@@ -130,7 +130,7 @@
   margin: 0 auto;
 }
 
-.lasers-and-feelings .sheet-body .bodyfieldsLabel {
+.laf .sheet-body .bodyfieldsLabel {
   padding-top: 15px;
   width: 100%;
   height: 70px;
@@ -141,65 +141,65 @@
   text-align: center;
 }
 
-.lasers-and-feelings .sheet-body .editor-content {
+.laf .sheet-body .editor-content {
   background: #f5f5f5;
   padding: 5px;
 }
 
-.lasers-and-feelings .sheet-body .editor {
+.laf .sheet-body .editor {
   height: 220px;
   background: #f5f5f5;
 }
 
-.lasers-and-feelings .tabs {
+.laf .tabs {
   height: 40px;
 }
-.lasers-and-feelings .tabs .item {
+.laf .tabs .item {
   border-style: double;
   line-height: 40px;
   font-weight: bold;
 }
-.lasers-and-feelings .tabs .item.active {
+.laf .tabs .item.active {
   text-decoration: underline;
   text-decoration-color: #00aeef;
   text-shadow: none;
 }
-.lasers-and-feelings .sheet-body {
+.laf .sheet-body {
   overflow: hidden;
 }
-.lasers-and-feelings .sheet-body .tab {
+.laf .sheet-body .tab {
   height: 100%;
   overflow-y: auto;
 }
-.lasers-and-feelings .editor {
+.laf .editor {
   height: 100px;
   border: 2px solid #007dac;
 
 }
-.lasers-and-feelings .item-list {
+.laf .item-list {
   list-style: none;
   margin: 7px 0;
   padding: 0;
   overflow-y: auto;
 }
-.lasers-and-feelings .item-list .item {
+.laf .item-list .item {
   min-height: 30px;
   line-height: 24px;
   padding: 3px 0;
   border-bottom: 1px solid #BBB;
   align-items: stretch;
 }
-.lasers-and-feelings .item-list .item img {
+.laf .item-list .item img {
   flex: 0 0 24px;
   margin-right: 5px;
 }
-.lasers-and-feelings .item-list .item-name {
+.laf .item-list .item-name {
   margin: 0;
 }
-.lasers-and-feelings .item-list .item-controls {
+.laf .item-list .item-controls {
   flex: 0 0 36px;
 }
-.lasers-and-feelings .item-list .item-buttons {
+.laf .item-list .item-buttons {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -207,13 +207,13 @@
   flex: 2;
   justify-content: flex-start;
 }
-.lasers-and-feelings .item-list .item-button {
+.laf .item-list .item-button {
   line-height: 1;
   font-size: 11px;
   flex: none;
   width: auto;
 }
-.lasers-and-feelings .attributes-header {
+.laf .attributes-header {
   padding: 5px;
   margin: 5px 0;
   background: rgba(0, 0, 0, 0.05);
@@ -222,18 +222,18 @@
   text-align: center;
   font-weight: bold;
 }
-.lasers-and-feelings .attributes-header .attribute-label {
+.laf .attributes-header .attribute-label {
   flex: 1.5;
 }
-.lasers-and-feelings .attributes-header .attribute-control {
+.laf .attributes-header .attribute-control {
   flex: 0 0 20px;
 }
-.lasers-and-feelings .attributes-list {
+.laf .attributes-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.lasers-and-feelings .attributes-list li > * {
+.laf .attributes-list li > * {
   margin: 0 3px;
   height: 28px;
   line-height: 24px;
@@ -242,28 +242,28 @@
   border-radius: 0;
   border-bottom: 1px solid #AAA;
 }
-.lasers-and-feelings .attributes-list a.attribute-control {
+.laf .attributes-list a.attribute-control {
   flex: 0 0 20px;
   text-align: center;
   line-height: 28px;
   border: none;
 }
-.lasers-and-feelings .attributes-list .attribute-col label {
+.laf .attributes-list .attribute-col label {
   font-size: 10px;
   text-align: center;
   line-height: 1;
 }
-.lasers-and-feelings .attributes-list .attribute-col input {
+.laf .attributes-list .attribute-col input {
   font-size: 11px;
   text-align: center;
   line-height: 1;
   height: 50%;
 }
-.lasers-and-feelings.sheet.actor {
+.laf.sheet.actor {
   min-width: 665px;
   min-height: 600px;
 }
-.lasers-and-feelings.sheet.item {
+.laf.sheet.item {
   min-width: 460px;
   min-height: 400px;
 }

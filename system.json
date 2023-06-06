@@ -1,5 +1,5 @@
 {
-  "name": "lasers-and-feelings",
+  "name": "laf",
   "title": "Lasers & Feelings",
   "description": "An implementation of the adaptable one-page Lasers & Feelings system by John Harper.",
   "version": "2.0.0",
@@ -15,21 +15,21 @@
     {
       "name": "create-a-space-adventure",
       "label": "Create a Space Adventure",
-      "system": "lasers-and-feelings",
+      "system": "laf",
       "type": "RollTable",
       "path": "./packs/create-a-space-adventure"
     },
     {
       "name": "standard-space-adventure-generator",
       "label": "Standard Space Adventure Generator",
-      "system": "lasers-and-feelings",
+      "system": "laf",
       "type": "Macro",
       "path": "./packs/standard-space-adventure-generator"
     },
     {
       "name": "lasers-and-feelings-rules",
       "label": "Lasers & Feelings PDF",
-      "system": "lasers-and-feelings",
+      "system": "laf",
       "type": "JournalEntry",
       "path": "./packs/lasers-and-feelings-rules"
     }

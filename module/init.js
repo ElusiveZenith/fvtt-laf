@@ -6,7 +6,7 @@ import { SimpleActorSheet } from "./actor-sheet.js";
 Hooks.once("init", async function() {
   console.log(`Initializing Lasers & Feelings System`);
  
-  game.settings.register("lasers-and-feelings", "Name", {
+  game.settings.register("laf", "Name", {
     name: "SIMPLE.Name",
     hint: "SIMPLE.Name",
     scope: "world",
@@ -22,12 +22,12 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("lasers-and-feelings", SimpleActorSheet, { makeDefault: true });
+  Actors.registerSheet("laf", SimpleActorSheet, { makeDefault: true });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("lasers-and-feelings", SimpleItemSheet, { makeDefault: true });
+  Items.registerSheet("laf", SimpleItemSheet, { makeDefault: true });
 
   // Register system settings
-  game.settings.register("lasers-and-feelings", "macroShorthand", {
+  game.settings.register("laf", "macroShorthand", {
     name: "SETTINGS.SimpleMacroShorthandN",
     hint: "SETTINGS.SimpleMacroShorthandL",
     scope: "world",
@@ -37,7 +37,7 @@ Hooks.once("init", async function() {
   });
 
   // Register initiative setting.
-  game.settings.register("lasers-and-feelings", "initFormula", {
+  game.settings.register("laf", "initFormula", {
     name: "SETTINGS.SimpleInitFormulaN",
     hint: "SETTINGS.SimpleInitFormulaL",
     scope: "world",
@@ -48,7 +48,7 @@ Hooks.once("init", async function() {
   });
 
   // Retrieve and assign the initiative formula setting.
-  const initFormula = game.settings.get("lasers-and-feelings", "initFormula");
+  const initFormula = game.settings.get("laf", "initFormula");
   _simpleUpdateInit(initFormula);
 
   /**
