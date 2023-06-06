@@ -1,15 +1,24 @@
 {
-  "name": "laf",
+  "id": "laf",
   "title": "Lasers & Feelings",
   "description": "An implementation of the adaptable one-page Lasers & Feelings system by John Harper.",
   "version": "2.0.0",
-  "minimumCoreVersion": "11",
-  "compatibleCoreVersion": "11",
+  "compatibility": {
+    "minimum": 11,
+    "verified": 11.300
+  },
   "url": "https://github.com/ElusiveZenith/fvtt-laf",
-  "manifest": "https://raw.githubusercontent.com/ElusiveZenith/fvtt-laf/2.0.0/system.json",
+  "manifest": "https://raw.githubusercontent.com/ElusiveZenith/fvtt-laf/master/system.json",
   "download": "https://github.com/ElusiveZenith/fvtt-laf/releases/download/2.0.0/system.zip",
   "templateVersion": 2,
   "author": "ElusiveZenith",
+  "authors": [
+    {
+      "name": "ElusiveZenith",
+      "url": "https://github.com/ElusiveZenith",
+      "discord": "ElusiveZenith#2127"
+    }
+  ],
   "contributor": ["Parker S."],
   "packs": [
     {
