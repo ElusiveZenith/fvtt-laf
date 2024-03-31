@@ -43,10 +43,7 @@
       "path": "./packs/lasers-and-feelings-rules"
     }
   ],
-  "esmodules": [
-    "module/init.js",
-    "module/lasers-and-feelings.js"
-  ],
+  "esmodules": ["module/init.js"],
   "styles": [
     "styles/simple.css"
   ],
