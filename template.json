@@ -1,27 +1,12 @@
 {
-  "Actor": 
-  {
-    "types": ["character"],
-    "character": {
-      "notepad": "",
-      "theOnlyStat": 0,
-      "style": "",
-      "role": "",
-      "goal": ""
-    }
+  "Actor": {
+    "types": [
+      "character"
+    ]
   },
-
-  "Item": 
-  {
-    "types": ["item"],
-    "item": 
-    {
-      "description": "",
-      "quantity": 1,
-      "weight": 0,
-      "attributes": 
-      {}
-    }
+  "Item": {
+    "types": [
+      "item"
+    ]
   }
-
 }

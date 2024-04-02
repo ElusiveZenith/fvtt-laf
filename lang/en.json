@@ -15,6 +15,15 @@
   "SIMPLE.UnsetTemplate": "Unset Template",
   "SIMPLE.NoTemplate": "No Template",
 
+  "SIMPLE.Weight": "Weight",
+  "SIMPLE.Quantity": "Quantity",
+  "SIMPLE.Description": "Description",
+  "SIMPLE.Attributes": "Attributes",
+  "SIMPLE.AttributeKey": "Attribute Key",
+  "SIMPLE.Value": "Value",
+  "SIMPLE.Label": "Label",
+  "SIMPLE.DataType": "Data Type",
+
   "SIMPLE.Name": "Name",
   "SIMPLE.Number": "Number",
   "SIMPLE.Role": "Role",
@@ -25,8 +34,12 @@
   "SIMPLE.Expert": "Expert",
   "SIMPLE.Normal": "Normal",
 
+  "SIMPLE.Lasers": "Lasers",
   "SIMPLE.LasersRoll": "Lasers Roll",
+  "SIMPLE.Feelings": "Feelings",
   "SIMPLE.FeelingsRoll": "Feelings Roll",
 
-  "SIMPLE.Successes": "Successes"
+  "SIMPLE.Successes": "Successes",
+
+  "SIMPLE.SpaceAdventure": "<h3>Space Adventure Generated:</h3> <strong>{threat}</strong> want(s) to <strong>{wants}</strong> the <strong>{target}</strong>, which will <strong>{result}</strong>."
 }

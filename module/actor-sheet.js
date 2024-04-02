@@ -1,5 +1,3 @@
-import { lasersRoll, feelingsRoll } from "./lasers-and-feelings.js";
-
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -7,51 +5,44 @@ import { lasersRoll, feelingsRoll } from "./lasers-and-feelings.js";
 export class SimpleActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
-    return mergeObject(super.defaultOptions, {
+    return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ["laf", "sheet", "actor"],
-      template: "systems/laf/templates/actor-sheet.html",
+      template: "systems/laf/templates/actor-sheet.hbs",
       width: 600,
       height: 600,
-      tabs: [
-        {
-          navSelector: ".sheet-tabs",
-          contentSelector: ".sheet-body",
-          initial: "description",
-        },
-      ],
-      dragDrop: [{ dragSelector: ".item-list .item", dropSelector: null }],
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
+      dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
 
   /** @override */
-  getData() {
-    const data = super.getData();
-    data.system = this.actor.system;
+  async getData() {
+    const rollData = this.document.getRollData();
+    const data = {
+      actor: this.document,
+      system: this.document.system,
+      enrichedNotepad: await TextEditor.enrichHTML(this.document.system.notepad, {async: true, rollData}),
+      editable: this.isEditable,
+      owner: this.document.isOwner,
+      rollData: rollData
+    };
     return data;
   }
 
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
-
-    //localizing labels on the character sheet
-    $(html).parents(".app").find(".numbersLabel")[0].innerText =
-      game.i18n.localize("SIMPLE.Number");
-    $(html).parents(".app").find("#styleLabel")[0].innerText =
-      game.i18n.localize("SIMPLE.Style");
-    $(html).parents(".app").find("#roleLabel")[0].innerText =
-      game.i18n.localize("SIMPLE.Role");
-    $(html).parents(".app").find("#goalLabel")[0].innerText =
-      game.i18n.localize("SIMPLE.Goal");
-    var characterName = $(html)
-      .parents(".app")
-      .find(".sheet-header h1.charname input")[0].value;
-
-    html.find("a.lasers").click(() => {
-      lasersRoll(characterName);
+    if (!this.options.editable) return;
+    html[0].querySelectorAll("[data-action=roll]").forEach(n => {
+      n.addEventListener("click", this._onClickRoll.bind(this));
     });
-    html.find("a.feelings").click(() => {
-      feelingsRoll(characterName);
+    html[0].querySelectorAll("input[type=text], input[type=number]").forEach(n => {
+      n.addEventListener("focus", (event) => event.currentTarget.select());
     });
+  }
+
+  async _onClickRoll(event) {
+    const type = event.currentTarget.dataset.type;
+    return this.document.roll(type);
   }
 }

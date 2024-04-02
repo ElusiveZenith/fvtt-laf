@@ -1,0 +1,51 @@
+<form class="{{cssClass}}" autocomplete="off">
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{actor.name}}" placeholder="{{localize SIMPLE.Name}}">
+      </h1>
+
+      <div class="subfields">
+        <div class="subfieldsBlock">
+          <a class="lasers" data-action="roll" data-type="laser">{{localize "SIMPLE.Lasers"}}</a>
+        </div>
+        <div class="subfieldsBlock">
+          <span class="numbersLabel">{{localize "SIMPLE.Number"}}</span>
+          <input class="numberinput" type="number" name="system.theOnlyStat" value="{{system.theOnlyStat}}" placeholder="{{localize 'SIMPLE.Number'}}">
+        </div>
+        <div class="subfieldsBlock">
+          <a class="feelings" data-action="roll" data-type="feeling">{{localize "SIMPLE.Feelings"}}</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+    <div class="body-container">
+      <div class="row">
+        <div class="column">
+          <div class="bodyfieldsLabel">{{localize "SIMPLE.Style"}}:</div>
+          <div class="bodyfieldsLabel">{{localize "SIMPLE.Role"}}:</div>
+          <div class="bodyfieldsLabel">{{localize "SIMPLE.Goal"}}:</div>
+        </div>
+        <div class="column">
+          <div class="bodyfields">
+            <input class="styleinput" name="system.style" type="text" value="{{system.style}}" placeholder="{{localize "SIMPLE.Style"}}">
+          </div>
+          <div class="bodyfields">
+            <input class="roleinput" name="system.role" type="text" value="{{system.role}}" placeholder="{{localize "SIMPLE.Role"}}">
+          </div>
+          <div class="bodyfields">
+            <input class="goalinput" name="system.goal" type="text" value="{{system.goal}}" placeholder="{{localize "SIMPLE.Goal"}}">
+          </div>
+        </div>
+      </div>
+      <div class="notepad" data-group="primary" data-tab="notepad" placeholder="Notes">
+        {{editor enrichedNotepad target="system.notepad" button=true rollData=rollData owner=owner editable=editable engine="prosemirror"}}
+      </div>
+    </div>
+  </section>
+</form>

@@ -1,5 +1,3 @@
-import { ATTRIBUTE_TYPES } from "./constants.js";
-
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -8,9 +6,9 @@ export class SimpleItemSheet extends ItemSheet {
 
   /** @override */
 	static get defaultOptions() {
-	  return mergeObject(super.defaultOptions, {
+	  return foundry.utils.mergeObject(super.defaultOptions, {
 			classes: ["laf", "sheet", "item"],
-			template: "systems/laf/templates/item-sheet.html",
+			template: "systems/laf/templates/item-sheet.hbs",
 			width: 520,
 			height: 480,
       tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
@@ -20,13 +18,16 @@ export class SimpleItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   /** @override */
-  getData() {
-    const data = super.getData();
-    data.dtypes = ATTRIBUTE_TYPES;
-    for ( let attr of Object.values(data.data.attributes) ) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-      attr.isResource = attr.dtype === "Resource";
-    }
+  async getData() {
+    const rollData = this.document.getRollData();
+    const data = {
+      item: this.document,
+      system: this.document.system,
+      enrichedDescription: await TextEditor.enrichHTML(this.document.system.description, {async: true, rollData}),
+      editable: this.isEditable,
+      owner: this.document.isOwner,
+      rollData: rollData
+    };
     return data;
   }
 
@@ -50,6 +51,10 @@ export class SimpleItemSheet extends ItemSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
+    html[0].querySelectorAll("input[type=text], input[type=number]").forEach(n => {
+      n.addEventListener("focus", (event) => event.currentTarget.select());
+    });
+
     // Add or Remove Attribute
     html.find(".attributes").on("click", ".attribute-control", this._onClickAttributeControl.bind(this));
   }
@@ -65,7 +70,7 @@ export class SimpleItemSheet extends ItemSheet {
     event.preventDefault();
     const a = event.currentTarget;
     const action = a.dataset.action;
-    const attrs = this.object.data.data.attributes;
+    const attrs = this.object.system.attributes;
     const form = this.form;
 
     // Add new attribute
@@ -78,7 +83,7 @@ export class SimpleItemSheet extends ItemSheet {
         ++nk;
         newValue = `attr${nk}`;
       }
-      newKey.innerHTML = `<input type="text" name="data.attributes.attr${nk}.key" value="${newValue}"/>`;
+      newKey.innerHTML = `<input type="text" name="system.attributes.attr${nk}.key" value="${newValue}"/>`;
       newKey = newKey.children[0];
       form.appendChild(newKey);
       await this._onSubmit(event);
@@ -98,7 +103,7 @@ export class SimpleItemSheet extends ItemSheet {
   _updateObject(event, formData) {
 
     // Handle the free-form attributes list
-    const formAttrs = expandObject(formData).data.attributes || {};
+    const formAttrs = expandObject(formData).system.attributes || {};
     const attributes = Object.values(formAttrs).reduce((obj, v) => {
       let k = v["key"].trim();
       if ( /[\s\.]/.test(k) )  return ui.notifications.error("Attribute keys may not contain spaces or periods");
@@ -108,15 +113,15 @@ export class SimpleItemSheet extends ItemSheet {
     }, {});
 
     // Remove attributes which are no longer used
-    for ( let k of Object.keys(this.object.data.data.attributes) ) {
+    for ( let k of Object.keys(this.object.system.attributes) ) {
       if ( !attributes.hasOwnProperty(k) ) attributes[`-=${k}`] = null;
     }
 
     // Re-combine formData
-    formData = Object.entries(formData).filter(e => !e[0].startsWith("data.attributes")).reduce((obj, e) => {
+    formData = Object.entries(formData).filter(e => !e[0].startsWith("system.attributes")).reduce((obj, e) => {
       obj[e[0]] = e[1];
       return obj;
-    }, {_id: this.object._id, "data.attributes": attributes});
+    }, {_id: this.object._id, "system.attributes": attributes});
 
     // Update the Item
     return this.object.update(formData);

@@ -1,4 +1,4 @@
-[![Foundry](https://img.shields.io/badge/Foundry-11.300-brightgreen)](https://foundryvtt.com/)
+[![Foundry](https://img.shields.io/badge/Foundry-11.315-brightgreen)](https://foundryvtt.com/)
 [![GitHub All Releases](https://img.shields.io/github/v/release/ElusiveZenith/fvtt-laf)](https://github.com/ElusiveZenith/fvtt-laf/releases/latest)
 [![GitHub All Releases](https://img.shields.io/github/downloads/ElusiveZenith/fvtt-laf/total)](https://github.com/ElusiveZenith/fvtt-laf/releases/latest)
 
