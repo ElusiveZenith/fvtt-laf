@@ -41,5 +41,8 @@
 
   "SIMPLE.Successes": "Successes",
 
-  "SIMPLE.SpaceAdventure": "<h3>Space Adventure Generated:</h3> <strong>{threat}</strong> want(s) to <strong>{wants}</strong> the <strong>{target}</strong>, which will <strong>{result}</strong>."
+  "SIMPLE.SpaceAdventure": "<h3>Space Adventure Generated:</h3> <strong>{threat}</strong> want(s) to <strong>{wants}</strong> the <strong>{target}</strong>, which will <strong>{result}</strong>.",
+
+  "SIMPLE.AttributeValue": "Value",
+  "SIMPLE.AttributeLabel": "Label"
 }

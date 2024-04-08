@@ -1,6 +1,6 @@
 export class ActorLAF extends Actor {
-  async roll(type="laser") {
-    const label = game.i18n.localize(`SIMPLE.${type==="laser" ? "Lasers" : "Feelings"}Roll`);
+  async roll(type = "laser") {
+    const label = game.i18n.localize(`SIMPLE.${type === "laser" ? "Lasers" : "Feelings"}Roll`);
     return Dialog.wait({
       title: label,
       content: `<p>${label}</p>`,
@@ -25,7 +25,7 @@ export class ActorLAF extends Actor {
     });
   }
 
-  async makeRoll(event, {dice="1d6", type="laser"}={}) {
+  async makeRoll(event, {dice = "1d6", type = "laser"} = {}) {
     const roll = await new Roll(dice).evaluate();
 
     let successes = 0;
@@ -34,7 +34,7 @@ export class ActorLAF extends Actor {
     const num = this.system.theOnlyStat;
 
     const results = roll.dice.flatMap(die => die.results.map(r => r.result));
-    const label = game.i18n.localize(`SIMPLE.${type==="laser" ? "Lasers" : "Feelings"}Roll`);
+    const label = game.i18n.localize(`SIMPLE.${type === "laser" ? "Lasers" : "Feelings"}Roll`);
 
     let content = `<p>${label}</p>`;
     content += `<div class="dice-tooltip"><ol class="dice-rolls">`;

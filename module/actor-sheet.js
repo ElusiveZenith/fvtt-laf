@@ -24,8 +24,13 @@ export class SimpleActorSheet extends ActorSheet {
       enrichedNotepad: await TextEditor.enrichHTML(this.document.system.notepad, {async: true, rollData}),
       editable: this.isEditable,
       owner: this.document.isOwner,
-      rollData: rollData
+      rollData: rollData,
+      items: this.document.items.contents
     };
+    data.items.sort((a, b) => {
+      const sort = b.sort - a.sort;
+      return sort ? sort : a.name.localeCompare(b.name);
+    });
     return data;
   }
 
@@ -39,6 +44,22 @@ export class SimpleActorSheet extends ActorSheet {
     html[0].querySelectorAll("input[type=text], input[type=number]").forEach(n => {
       n.addEventListener("focus", (event) => event.currentTarget.select());
     });
+    html[0].querySelectorAll(".item-list [data-action=item]").forEach(n => {
+      n.addEventListener("click", this._onClickItem.bind(this));
+    });
+    html[0].querySelectorAll(".item-list [data-action=delete]").forEach(n => {
+      n.addEventListener("click", this._onClickDeleteItem.bind(this));
+    });
+  }
+
+  async _onClickDeleteItem(event) {
+    const id = event.currentTarget.closest("[data-item-id]").dataset.itemId;
+    return this.document.items.get(id).deleteDialog();
+  }
+
+  async _onClickItem(event) {
+    const id = event.currentTarget.closest("[data-item-id]").dataset.itemId;
+    return this.document.items.get(id).sheet.render(true);
   }
 
   async _onClickRoll(event) {
