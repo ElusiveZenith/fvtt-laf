@@ -33,19 +33,30 @@
         </div>
         <div class="column">
           <div class="bodyfields">
-            <input class="styleinput" name="system.style" type="text" value="{{system.style}}" placeholder="{{localize "SIMPLE.Style"}}">
+            <input class="styleinput" name="system.style" type="text" value="{{system.style}}" placeholder="{{localize 'SIMPLE.Style'}}">
           </div>
           <div class="bodyfields">
-            <input class="roleinput" name="system.role" type="text" value="{{system.role}}" placeholder="{{localize "SIMPLE.Role"}}">
+            <input class="roleinput" name="system.role" type="text" value="{{system.role}}" placeholder="{{localize 'SIMPLE.Role'}}">
           </div>
           <div class="bodyfields">
-            <input class="goalinput" name="system.goal" type="text" value="{{system.goal}}" placeholder="{{localize "SIMPLE.Goal"}}">
+            <input class="goalinput" name="system.goal" type="text" value="{{system.goal}}" placeholder="{{localize 'SIMPLE.Goal'}}">
           </div>
         </div>
       </div>
       <div class="notepad" data-group="primary" data-tab="notepad" placeholder="Notes">
         {{editor enrichedNotepad target="system.notepad" button=true rollData=rollData owner=owner editable=editable engine="prosemirror"}}
       </div>
+      <ul class="item-list">
+        {{#each items as |item|}}
+        <li class="item" data-item-id="{{item.id}}">
+          <img src="{{item.img}}" alt="">
+          <a data-action="item" class="item-name">{{item.name}}</a>
+          <div class="item-controls">
+            <a class="item-control" data-action="delete"><i class="fa-solid fa-trash"></i></a>
+          </div>
+        </li>
+        {{/each}}
+      </ul>
     </div>
   </section>
 </form>

@@ -1,5 +1,5 @@
-import { SimpleActorSheet } from "./actor-sheet.js";
-import { SimpleItemSheet } from "./item-sheet.js";
+import {SimpleActorSheet} from "./actor-sheet.js";
+import {SimpleItemSheet} from "./item-sheet.js";
 import * as documents from "./document-classes.js";
 
 /* -------------------------------------------- */
@@ -24,9 +24,9 @@ Hooks.once("init", async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("laf", SimpleActorSheet, { makeDefault: true });
+  Actors.registerSheet("laf", SimpleActorSheet, {makeDefault: true});
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("laf", SimpleItemSheet, { makeDefault: true });
+  Items.registerSheet("laf", SimpleItemSheet, {makeDefault: true});
 
   // Register system settings
   game.settings.register("laf", "macroShorthand", {

@@ -12,7 +12,20 @@
   background: url('../assets/greybg.jpg');
   height: 100%;
   padding: 5px;
-  overflow-y: hidden;
+  overflow: hidden;
+
+  & form {
+    height: 100%;
+
+    .sheet-body {
+      height: calc(100% - 100px);
+
+      .body-container {
+        height: 100%;
+        overflow: auto;
+      }
+    }
+  }
 }
 .laf .sheet-header {
   overflow: hidden;
@@ -151,13 +164,14 @@
 }
 .laf .tabs .item {
   border-style: double;
-  line-height: 40px;
+  line-height: 28px;
   font-weight: bold;
 }
 .laf .tabs .item.active {
   text-decoration: underline;
   text-decoration-color: #00aeef;
   text-shadow: none;
+  border-color: #00aeef;
 }
 .laf.sheet.item .resource {
   display: flex;
@@ -178,13 +192,10 @@
 .laf .editor {
   height: 100px;
   border: 2px solid #007dac;
-
 }
 .laf .item-list {
   list-style: none;
-  margin: 7px 0;
   padding: 0;
-  overflow-y: auto;
 }
 .laf .item-list .item {
   min-height: 30px;
@@ -192,13 +203,17 @@
   padding: 3px 0;
   border-bottom: 1px solid #BBB;
   align-items: stretch;
+  display: flex;
 }
 .laf .item-list .item img {
   flex: 0 0 24px;
   margin-right: 5px;
+  border: none;
+  max-width: 24px;
 }
 .laf .item-list .item-name {
   margin: 0;
+  flex: 1;
 }
 .laf .item-list .item-controls {
   flex: 0 0 36px;
